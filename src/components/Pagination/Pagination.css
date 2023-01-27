@@ -1,0 +1,30 @@
+.pagination{
+
+  display: flex;
+  justify-content: center;
+  gap:0.2rem;
+  /* background-color: violet; */
+
+}
+
+.pagination > div{
+  /* background-color: rgb(137, 151, 151); */
+  /* border: 4px solid black; */
+  aspect-ratio: 1;
+  width: 3rem;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  border-radius: 1rem;
+
+  cursor: pointer;
+  margin-bottom: 1rem;
+
+}
+
+.pagination > div.active{
+
+  background-color: #ED5564;
+  color: white;
+}
+
