@@ -15,7 +15,8 @@
   align-items: baseline;
   position: relative;
 
-  color: #5B5B5B;
+  color: #292929;
+  border: 0.5rem solid #5B5B5B;
   
 }
 
@@ -23,7 +24,7 @@
   /* border: 1px dotted royalblue; */
   aspect-ratio: 1;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 1rem;
 
 }
@@ -45,4 +46,8 @@
   font-size: x-large;
   color: #5B5B5B;
   /* background-color: #5B5B5B; */
+}
+
+.pokemon-card-container h4{
+  user-select: none;
 }

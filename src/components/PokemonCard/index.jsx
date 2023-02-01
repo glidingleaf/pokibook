@@ -1,21 +1,31 @@
 import React from 'react';
 import './PokemonCard.css';
 
-const PokemonCard = () => {
+const PokemonCard = ({pokemonData}) => {
   const imgSrc = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png';
+
+  const {
+    id,
+    name,
+    weight,
+    height,
+    base_experience: xp,
+    sprites
+  } = pokemonData;
+  const img = sprites['other']['official-artwork']['front_default'];
 
   return (
     <div className='pokemon-card-container'>
       
-      <div className='pokemon-id'>#<span>35</span></div>
-      <img src={imgSrc} alt="pokemon-sprite" />
+      <div className='pokemon-id'>#<span>{id}</span></div>
+      <img src={img} alt="pokemon-sprite" />
 
-      <h4><span>Id</span> : <span>25</span></h4>
-      <h4><span>Name</span> : <span>pikachu</span></h4>
-      <h4><span>type</span> : <span>electric</span></h4>
-      <h4><span>order</span> : <span>35</span></h4>
-      <h4><span>weight</span> : <span>60kg</span></h4>
-      <h4><span>height</span>: <span>4</span></h4>
+      {/* <h4><span>Id</span> : <span>{id}</span></h4> */}
+      <h4><span>Name</span> : <span>{name}</span></h4>
+      {/* <h4><span>type</span> : <span>electric</span></h4> */}
+      <h4><span>Weight</span> : <span>{weight}</span></h4>
+      <h4><span>Height</span>: <span>{height}</span></h4>
+      <h4><span>XP</span> : <span>{xp}</span></h4>
 
     </div>
   )

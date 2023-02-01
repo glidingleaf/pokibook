@@ -16,15 +16,26 @@
   justify-content: center; 
   align-items: center;
   border-radius: 1rem;
-
+  user-select: none;
   cursor: pointer;
   margin-bottom: 1rem;
-
+  
 }
-
 .pagination > div.active{
 
   background-color: #ED5564;
   color: white;
 }
+
+.pagination > .change-page{
+  cursor: pointer;
+  border: 1px solid #ED5564;
+}
+.pagination > .change-page:hover{
+  background-color: #ED5564;
+  color: white;
+
+  transform: scale(1.2);
+}
+
 
