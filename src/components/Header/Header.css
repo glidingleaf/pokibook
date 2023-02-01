@@ -2,28 +2,45 @@ header{
 
   /* border: 1px solid black;  */
   box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+  /* background-color: aqua; */
 
 }
 
-header nav
-{
-  /* background-color: aliceblue; */
+header nav{
+  /* background-color: red; */
   height: 100%;
   display: flex;
-  
+  justify-content:stretch;
+
 }
 
 .nav-item{
   /* border: 1px solid palevioletred; */
-  aspect-ratio: 1;
   height: 100%;
-  padding: 0.8rem;
   /* size: 1rem; */
+}
+
+.nav-item.logo-container{
+  /* background-color: aquamarine; */
+  aspect-ratio: 1;
+  padding: 0.8rem;
+}
+.nav-item.search-nav-container{
+  
+  /* background-color: yellowgreen; */
+  /* width: 100%; */
+  margin-left: auto;
+  margin-right: 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  
+
+  
 }
 
 header nav .logo{
   cursor: pointer;
   width: 100%;
   /* border: 3px solid rebeccapurple; */
-
 }
