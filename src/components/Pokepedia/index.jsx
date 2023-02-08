@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import {  useState } from 'react';
 import './Pokepedia.css';
-import axios from 'axios';
 import Pagination from '@components/Pagination';
 import PokemonCard from '@components/PokemonCard';
-// import useFetchPokemonList from '@hooks/useFetchPokemonList';
-import { useQueries, useQuery } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import getPokemons from '@services/getPokemons';
-// import getPokemonByUrl from '@services/getPokemonByUrl';
 import useFetchPokemonFromUrls from '@hooks/useFetchPokemonsFromUrls';
 
 

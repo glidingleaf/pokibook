@@ -1,10 +1,11 @@
 import './App.css';
 import {Routes,Route} from 'react-router-dom'
+import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 
 import Pokepedia from '@components/Pokepedia';
 import Layout from '@components/Layout';
+import PokemonInfo from '@components/PokemonInfo';
 import NotFound from '@/components/NotFound';
-import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 
 
 
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           
           <Route path='/' element={<Pokepedia/>} />
+          <Route path='pokemonInfo/:pokemonId' element={<PokemonInfo/>} />
           <Route path='*' element={<NotFound/>} />
 
         </Routes>
