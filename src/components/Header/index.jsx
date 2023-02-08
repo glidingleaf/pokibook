@@ -1,7 +1,8 @@
-import React from 'react';
 import './Header.css';
 import logo from '@assets/pokeball.svg';
+
 import { Link } from 'react-router-dom';
+
 import Search from '@components/Search';
 
 const Header = () => {

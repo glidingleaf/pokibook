@@ -1,0 +1,64 @@
+
+.pokemon-carousel-container{
+
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  aspect-ratio: 1;
+  border: 1px solid #ED5564;
+  margin-bottom: 1rem;
+  
+}
+.pokemon-carousel{
+
+  display: flex;
+  overflow-x: hidden;
+  aspect-ratio: 1;
+  flex-basis: 100%;
+}
+
+.carousel-left-shift,.carousel-right-shift{
+  aspect-ratio: 1;
+  width: max-content;
+  padding: 0.35rem;
+  align-self: center;
+  position: absolute;
+  background:none;
+  border-radius: 50%;
+  border: none;
+}
+
+.carousel-left-shift:hover, 
+.carousel-right-shift:hover{
+  background-color: #ED55649f;
+  color: white;
+}
+
+.carousel-left-shift{
+  left: 10%;
+}
+.carousel-right-shift{
+  right: 10%;
+}
+
+button > img{
+  aspect-ratio: 1;
+  width: 2rem;
+}
+
+
+.pokemon-carousel > .img-container{
+  aspect-ratio: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-container > img{
+  object-fit: contain;
+  aspect-ratio: 1;
+  width: 80%;
+  border-radius: 5%; 
+}
