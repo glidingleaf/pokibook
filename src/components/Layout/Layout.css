@@ -1,5 +1,4 @@
 .layout{
-  /* background-color: yellow; */
   height: 100vh;
   display: grid;
   grid-template-rows: 4rem 1fr;

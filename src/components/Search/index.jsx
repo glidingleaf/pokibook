@@ -1,68 +1,75 @@
-import React, { useState,useRef } from 'react';
 import './Search.css';
-import searchIcon from '@assets/ui/search.svg';
+import { Link, redirect } from 'react-router-dom';
+
+import { useState, useRef, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
+
+import searchIcon from '@assets/ui/search.svg';
+import pokeballImg from '@assets/pokeball_small.svg';
 import getPokemonByUrl from '@services/getPokemonByUrl';
-import pokeballImg from '@assets/pokeball_small.svg'
 
 const Search = () => {
 
   const BASEURL = 'https://pokeapi.co/api/v2/pokemon/';
-  const [url,setUrl] = useState(null);
-  const [showSearch,setShowSearch] = useState(false);
+  const [url, setUrl] = useState(null);
+  const [showSearch, setShowSearch] = useState(false);
   const startSearch = useRef(false);
   const pokemon = useRef({});
 
-  const mountedStyle = { animation: 'inAnimation 250ms ease-in' };
-  
-  
+/* -------------delay Show Search ----------------- */
+  const [delayShowSearch,setDelayShowSearch] = useState(false);
+  useEffect(()=>{
+    const timer = setTimeout(()=>setShowSearch(false),100);
+    setDelayShowSearch(false)
+
+    return ()=>clearTimeout(timer);
+  },[delayShowSearch])
+/* ------------------------------------------------- */
+
+
   const searchBoxRef = useRef(null);
   const searchContainerRef = useRef(null);
-  
-  const {data,isLoading,isFetched,error} = useQuery({
-    queryKey:['pokemon',{
-      url
+
+  const { data, isLoading, error } = useQuery({
+    queryKey: ['pokemon', {
+      url: url
     }],
     queryFn: () => getPokemonByUrl(url),
     enabled: startSearch.current,
-    retry:false
+    retry: false
   });
 
 
-  if(isLoading){
-    console.log('loading');    
+  if (isLoading) {
+    // console.log('loading');
   }
-  else if(error){
-    if(error.response.status == 404){
+  else if (error) {
+    if (error.response.status == 404) {
       pokemon.current = {
-        name:'Not Found',
-        img:pokeballImg,
+        name: 'Not Found',
+        img: pokeballImg,
       }
 
       startSearch.current = false;
     }
   }
   else {
-    console.log(data);
-    const {name,sprites} = data;
+    const { name, sprites } = data;
     const img = sprites['front_default'];
     pokemon.current = {
-      name:name,
-      img:img,
+      name: name,
+      img: img,
     }
-    // console.log(img,name);
     startSearch.current = false;
   }
-  
-  
-  const keyPressHandler =(e)=>{
-    if(e.key == 'Enter'){
+
+
+  const keyPressHandler = (e) => {
+    if (e.key == 'Enter') {
       setUrl(BASEURL + searchBoxRef.current.value);
       startSearch.current = true;
-      console.log(document.activeElement);
       setShowSearch(true);
-      
-     
+
     }
   }
 
@@ -74,28 +81,35 @@ const Search = () => {
         <img src={searchIcon}
           className='search-icon' alt="search"
         />
-        <input 
-          type="text" 
+        <input
+          type="text"
           placeholder='Search Pokemon'
-          className='search-box' 
-          ref={searchBoxRef} 
-          onKeyDown={keyPressHandler} 
-          onBlur={()=>setShowSearch(false)}
+          className='search-box'
+          ref={searchBoxRef}
+          onKeyDown={keyPressHandler}
+          onBlur={() => {
+            setDelayShowSearch(true);
+          }}
 
         />
       </div>
       {
         showSearch
-        ? <div className='search-result'>
+          ?
+          <Link 
+            to={`pokemonInfo/${pokemon.current.name}`}
+            onClick={() => setShowSearch(false)}
+            className='search-result'>
             <img src={pokemon.current.img} alt="pokemon" />
             <h4>{pokemon.current.name}</h4>
-          </div>
-        : null
+          </Link>
+
+          : null
       }
 
 
 
-      
+
     </div>
   )
 }
