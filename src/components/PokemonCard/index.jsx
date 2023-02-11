@@ -15,7 +15,7 @@ const PokemonCard = ({ pokemonData }) => {
   const img = sprites['other']['official-artwork']['front_default'];
 
   return (
-    <Link to={`pokemonInfo/${id}`}>
+    <Link to={`pokemon/${id}`}>
       <div className='pokemon-card-container'>
 
         <div className='pokemon-id'>#<span>{id}</span></div>

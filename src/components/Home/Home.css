@@ -1,0 +1,72 @@
+
+.home{
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  
+
+}
+
+.home-child-1{
+
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+}
+
+.pokibook-text-container{
+  width: fit-content;
+  height: fit-content;
+  padding: 2rem;
+}
+
+
+.pokibook-text-container > img{
+
+  aspect-ratio: 3/1;
+  object-fit: contain;
+  width: 100%;
+}
+
+.explore-button{
+  padding: 1rem;
+  font-family: inherit;
+  font-size: large;
+  background-color: #ED5564;
+  color: white;
+  border:none;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.explore-button:hover{
+  transform: scale(1.1);
+}
+
+.home-child-2{
+
+  flex-basis: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.home-child-2 >.title{
+  font-size: xx-large;
+  color:#ED5564;
+}
+
+.card-container{
+  aspect-ratio: 1;
+  width: 18rem;
+  background-color: aliceblue;
+  
+}

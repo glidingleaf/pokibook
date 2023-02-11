@@ -16,15 +16,15 @@ const Search = () => {
   const startSearch = useRef(false);
   const pokemon = useRef({});
 
-/* -------------delay Show Search ----------------- */
-  const [delayShowSearch,setDelayShowSearch] = useState(false);
-  useEffect(()=>{
-    const timer = setTimeout(()=>setShowSearch(false),100);
+  /* -------------delay Show Search ----------------- */
+  const [delayShowSearch, setDelayShowSearch] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => setShowSearch(false), 100);
     setDelayShowSearch(false)
 
-    return ()=>clearTimeout(timer);
-  },[delayShowSearch])
-/* ------------------------------------------------- */
+    return () => clearTimeout(timer);
+  }, [delayShowSearch])
+  /* ------------------------------------------------- */
 
 
   const searchBoxRef = useRef(null);
@@ -96,12 +96,12 @@ const Search = () => {
       {
         showSearch
           ?
-          <Link 
-            to={`pokemonInfo/${pokemon.current.name}`}
-            onClick={() => setShowSearch(false)}
+          <Link
+            to={`pokemon/${pokemon.current.name}`}
+            onClick={() => {setShowSearch(false)}}
             className='search-result'>
-            <img src={pokemon.current.img} alt="pokemon" />
-            <h4>{pokemon.current.name}</h4>
+              <img src={pokemon.current.img} alt="pokemon" />
+              <h4>{pokemon.current.name}</h4>
           </Link>
 
           : null
