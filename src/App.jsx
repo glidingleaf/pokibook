@@ -5,7 +5,8 @@ import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import Pokepedia from '@components/Pokepedia';
 import Layout from '@components/Layout';
 import PokemonInfo from '@components/PokemonInfo';
-import NotFound from '@/components/NotFound';
+import Home from '@components/Home';
+import NotFound from '@components/NotFound';
 
 
 
@@ -19,8 +20,9 @@ function App() {
 
         <Routes>
           
-          <Route path='/' element={<Pokepedia/>} />
-          <Route path='pokemonInfo/:pokemonId' element={<PokemonInfo/>} />
+          <Route path='pokemon/:pokemonId' element={<PokemonInfo/>} />
+          <Route path='pokemon' element={<Pokepedia/>} />
+          <Route path='/' element={<Home/>} />
           <Route path='*' element={<NotFound/>} />
 
         </Routes>
