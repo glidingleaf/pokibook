@@ -66,7 +66,7 @@ const Search = () => {
 
   const keyPressHandler = (e) => {
     if (e.key == 'Enter') {
-      setUrl(BASEURL + searchBoxRef.current.value);
+      setUrl(BASEURL + searchBoxRef.current.value.toLowerCase());
       startSearch.current = true;
       setShowSearch(true);
 
