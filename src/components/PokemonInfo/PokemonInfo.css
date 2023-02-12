@@ -2,9 +2,9 @@
   
   font-size: larger;
   height: 100%;
-  padding: 2rem 4rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(24rem,16%));
+  padding: 2rem 0;
+  grid-template-columns: repeat(auto-fit,minmax(20rem,16%));
   justify-content: space-around;
   align-items: stretch;
   gap:10rem;
@@ -19,6 +19,13 @@
 
 
 
+.pokemon-stats-container{
+  display: flex;
+  align-items: center;
+  aspect-ratio: 1;
+  border: 1px solid #ED5564;
+}
+
 .pokemon-attributes-container{
   
   display: flex;
@@ -29,19 +36,12 @@
 
   .pokemon-info{
     grid-template-columns: repeat(auto-fit,minmax(18rem,16%));
+    padding: 2rem 4rem;
     gap:10rem;
-  
   }
   .pokemon-attributes-container{
     grid-column: 2/4;
   }
 
-}
-
-.pokemon-stats-container{
-  display: flex;
-  align-items: center;
-  aspect-ratio: 1;
-  border: 1px solid #ED5564;
 }
 

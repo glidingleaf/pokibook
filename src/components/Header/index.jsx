@@ -19,7 +19,7 @@ const Header = () => {
           <Search/>
         </div>
         
-      </nav>
+      </nav>  
     </header>
   )
 }
