@@ -97,7 +97,7 @@ const Search = () => {
         showSearch
           ?
           <Link
-            to={`pokemon/${pokemon.current.name}`}
+            to={`/pokemon/${pokemon.current.name}`}
             onClick={() => {setShowSearch(false)}}
             className='search-result'>
               <img src={pokemon.current.img} alt="pokemon" />

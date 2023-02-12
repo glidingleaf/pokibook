@@ -23,16 +23,13 @@ const PokemonInfo = (pokemonDataParam) => {
 
   const { pokemonId } = useParams();
 
-  if (!pokemonData.current) {
+  if (pokemonData.current != pokemonId) {
     pokemonIdentifier.current = pokemonId;
     url.current = BASEURL + pokemonIdentifier.current;
 
     getPokemonFlag.current = true;
   }
- else{
-  // when initiated from another page
- }
-
+  
   const { data, isLoading, error } = useQuery({
     queryKey: ['pokemon', {
       url: url.current
