@@ -33,9 +33,9 @@ const PokemonAttributes = ({ attributes: {
               <th className='attribute-name'>Abilities</th>
               <td>
                 {
-                  abilities.map((abilityObj) => {
+                  abilities.map((abilityObj,index) => {
                     return (
-                      <div className='attribute-value'>
+                      <div key={index} className='attribute-value'>
                         {
                           toCamelCaps(abilityObj['ability']['name'])
                         }
@@ -54,9 +54,9 @@ const PokemonAttributes = ({ attributes: {
               <th className='attribute-name'>Held Items</th>
               <td>
                 {
-                  heldItems.map((heldItemsObj) => {
+                  heldItems.map((heldItemsObj,index) => {
                     return (
-                      <div className='attribute-value'>
+                      <div key={index} className='attribute-value'>
                         {
                           toCamelCaps(heldItemsObj['item']['name'])
                         }
@@ -76,9 +76,9 @@ const PokemonAttributes = ({ attributes: {
               <th className='attribute-name'>Types</th>
               <td>
                 {
-                  types.map((typesObj) => {
+                  types.map((typesObj,index) => {
                     return (
-                      <div className='attribute-value'>
+                      <div key={index} className='attribute-value'>
                         {
                           toCamelCaps(typesObj['type']['name'])
                         }
